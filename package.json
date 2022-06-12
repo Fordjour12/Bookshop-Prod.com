@@ -1,0 +1,11 @@
+{
+	"name": "bookshop-prod",
+	"version": "1.0.0",
+	"description": " A book shop application",
+	"keywords": [
+		"Bookstore",
+		"bookshop"
+	],
+	"author": "Bobie Fordjour McCamble Kofi",
+	"license": "MIT"
+}
