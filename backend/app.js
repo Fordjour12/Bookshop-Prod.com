@@ -20,7 +20,13 @@ app.use(urlencoded({ extended: false }))
 app.use(express.static('public'))
 
 app.get('/', async (_request, response) => {
-	response.render('index', { title: 'Express' })
+	// response.render('index', { title: 'Express' })
+	response.send(`
+	<div>
+		<h1>Express</h1>
+		<p>Express web server ............💃💃💃💃💃💃</p>
+	</div>
+	`)
 })
 
 app.use(async (_request, _response, next) => {
