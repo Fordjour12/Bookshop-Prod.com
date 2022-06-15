@@ -7,5 +7,8 @@
 		"bookshop"
 	],
 	"author": "Bobie Fordjour McCamble Kofi",
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {
+		"eslint": "^8.17.0"
+	}
 }

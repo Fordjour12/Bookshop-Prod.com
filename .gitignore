@@ -25,3 +25,5 @@ dist-ssr
 
 key.json
 setup.*
+TODO
+docker-compose.*

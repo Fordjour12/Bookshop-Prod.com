@@ -8,19 +8,19 @@ import createError from 'http-errors'
 
 const app = express()
 const Port = process.env.PORT
+const Host = process.env.HOST
 
-// middlewares
+// middleware
 app.use(cors())
 app.use(volleyball)
 app.use(compression())
 app.use(helmet())
 app.use(json())
 app.use(urlencoded({ extended: false }))
+app.use(express.static('public'))
 
-app.get('/', async (_request, response, next) => {
-	response.send('Hello world')
-
-	next()
+app.get('/', async (_request, response) => {
+	response.render('index', { title: 'Express' })
 })
 
 app.use(async (_request, _response, next) => {
@@ -36,5 +36,5 @@ app.use((error, _request, response) => {
 })
 
 app.listen(Port, () => {
-	console.log(`Server Running on http://localhost:${Port}`)
+	console.log(`Server Running on http://${Host}:${Port}`)
 })
