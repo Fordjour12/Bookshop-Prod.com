@@ -1,20 +1,40 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+import 'dotenv/config'
+import express, { json, urlencoded } from 'express'
+import compression from 'compression'
+import helmet from 'helmet'
+import cors from 'cors'
+import volleyball from 'volleyball'
+import createError from 'http-errors'
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const app = express()
+const Port = process.env.PORT
 
-var app = express();
+// middlewares
+app.use(cors())
+app.use(volleyball)
+app.use(compression())
+app.use(helmet())
+app.use(json())
+app.use(urlencoded({ extended: false }))
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.get('/', async (_request, response, next) => {
+	response.send('Hello world')
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+	next()
+})
 
-module.exports = app;
+app.use(async (_request, _response, next) => {
+	next(createError.NotFound())
+})
+
+// error middleware catches all error
+app.use((error, _request, response) => {
+	const status = error.statusCode || 500
+	const message = error.message
+	const data = error.data
+	response.status(status).json({ message: message, data: data })
+})
+
+app.listen(Port, () => {
+	console.log(`Server Running on http://localhost:${Port}`)
+})
