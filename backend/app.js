@@ -6,6 +6,9 @@ import cors from 'cors'
 import volleyball from 'volleyball'
 import createError from 'http-errors'
 
+// import indexRouter from './routes/index'
+import usersRouter from './routes/users.router.js'
+
 const app = express()
 const Port = process.env.PORT
 const Host = process.env.HOST
@@ -28,6 +31,10 @@ app.get('/', async (_request, response) => {
 	</div>
 	`)
 })
+
+// Routes
+app.use('/api/users', usersRouter)
+// app.use('/api/', usersRouter)
 
 app.use(async (_request, _response, next) => {
 	next(createError.NotFound())

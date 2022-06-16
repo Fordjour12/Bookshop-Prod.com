@@ -27,4 +27,5 @@ key.json
 setup.*
 TODO
 .github/*
+.env
 docker-compose.*
