@@ -6,6 +6,9 @@ import cors from 'cors'
 import volleyball from 'volleyball'
 import createError from 'http-errors'
 
+// import indexRouter from './routes/index'
+import usersRouter from './routes/users.router.js'
+
 const app = express()
 const Port = process.env.PORT
 const Host = process.env.HOST
@@ -20,8 +23,18 @@ app.use(urlencoded({ extended: false }))
 app.use(express.static('public'))
 
 app.get('/', async (_request, response) => {
-	response.render('index', { title: 'Express' })
+	// response.render('index', { title: 'Express' })
+	response.send(`
+	<div>
+		<h1>Express</h1>
+		<p>Express web server ............💃💃💃💃💃💃</p>
+	</div>
+	`)
 })
+
+// Routes
+app.use('/api/users', usersRouter)
+// app.use('/api/', usersRouter)
 
 app.use(async (_request, _response, next) => {
 	next(createError.NotFound())
