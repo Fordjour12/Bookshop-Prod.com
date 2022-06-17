@@ -1,0 +1,17 @@
+export default {
+	customer: 'customer',
+	customer_address: 'customer_address',
+	address_status: 'address_status',
+	publisher_id: 'publisher_id',
+	book: 'book',
+	book_author: 'book_author',
+	author: 'author',
+	books_language: 'books_language',
+	order_line: 'order_line',
+	customer_order: 'customer_order',
+	address: 'address',
+	country: 'country',
+	shipping_method: 'shipping_method',
+	order_history: 'order_history',
+	order_status: 'order_status',
+}

@@ -1,12 +1,10 @@
 import { Model } from 'objection'
-import connection from '../config/db.config.js'
-
-Model.knex(connection)
+import tablesConfig from '../config/tables.config'
 // Person model.
 
-class Person extends Model {
+class Customer extends Model {
 	static get tableName() {
-		return 'Person'
+		return tablesConfig.customer
 	}
 
 	static get jsonSchema() {
@@ -23,4 +21,4 @@ class Person extends Model {
 	}
 }
 
-export default Person
+export default Customer
