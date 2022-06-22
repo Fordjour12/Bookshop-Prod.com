@@ -4,7 +4,9 @@
 	"private": true,
 	"scripts": {
 		"start": "node app.js",
-		"dev": "nodemon app.js"
+		"dev": "nodemon app.js",
+		"migrate": "npx knex migrate:latest --knexfile ./knexfile.js",
+		"rollback": "npx knex migrate:rollback --knexfile ./knexfile.js"
 	},
 	"type": "module",
 	"dependencies": {
