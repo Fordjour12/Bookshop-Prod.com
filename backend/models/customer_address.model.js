@@ -5,10 +5,10 @@ import connection from '../config/db.config'
 // initializing the db config
 Model.knex(connection)
 
-// Customer model.
-class Customer extends Model {
+// Customer_Address model.
+class CustomerAddress extends Model {
 	static get tableName() {
-		return tablesConfig.customer
+		return tablesConfig.customer_address
 	}
 
 	static relationMappings = {}
@@ -16,15 +16,15 @@ class Customer extends Model {
 	static get jsonSchema() {
 		return {
 			type: 'object',
-			required: ['customer_Id', 'name', 'email'],
+			required: ['customer_Id', 'status_Id', 'address_Id'],
 
 			properties: {
-				customer_id: { type: 'uuid' },
-				name: { type: 'string', minLength: 1, maxLength: 250 },
-				email: { type: 'string', minLength: 1, maxLength: 255 },
+				customer_Id: { type: 'uuid' },
+				status_Id: { type: 'integer' },
+				address_Id: { type: 'integer' },
 			},
 		}
 	}
 }
 
-export default Customer
+export default CustomerAddress

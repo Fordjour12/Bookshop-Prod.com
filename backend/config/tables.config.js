@@ -12,6 +12,6 @@ export default {
 	order_history: 'order_history',
 	order_status: 'order_status',
 	shipping_method: 'shipping_method',
-	region: 'region',
 	publisher: 'publisher',
+	region: 'region',
 }

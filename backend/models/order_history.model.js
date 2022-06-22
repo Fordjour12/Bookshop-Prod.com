@@ -5,10 +5,10 @@ import connection from '../config/db.config'
 // initializing the db config
 Model.knex(connection)
 
-// Customer model.
-class Customer extends Model {
+// Order_History model.
+class OrderHistory extends Model {
 	static get tableName() {
-		return tablesConfig.customer
+		return tablesConfig.order_history
 	}
 
 	static relationMappings = {}
@@ -16,15 +16,16 @@ class Customer extends Model {
 	static get jsonSchema() {
 		return {
 			type: 'object',
-			required: ['customer_Id', 'name', 'email'],
+			required: ['history_Id', 'order_Id', 'status_Id', 'status_date'],
 
 			properties: {
-				customer_id: { type: 'uuid' },
-				name: { type: 'string', minLength: 1, maxLength: 250 },
-				email: { type: 'string', minLength: 1, maxLength: 255 },
+				customer_Id: { type: 'uuid' },
+				order_Id: { type: 'uuid' },
+				status_Id: { type: 'integer' },
+				status_date: { type: 'date' },
 			},
 		}
 	}
 }
 
-export default Customer
+export default OrderHistory
