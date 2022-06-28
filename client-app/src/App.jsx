@@ -1,27 +1,32 @@
 import React from 'react'
+import Homepage from './components/pages/homepage'
 import './scss/stylesheet.scss'
-import logo from './assets/phantom Icon/phantom 2.png'
+// import BackgroundImage from './assets/phantom Icon/phantom 2.png'
+
 const App = () => {
 	return (
-		<div
-			style={{
-				width: '100%',
-				height: '100vh',
-				display: 'grid',
-				placeContent: 'center',
-			}}
-		>
-			<img
-				src={logo}
+		<>
+			<Homepage />
+			{/* <div
 				style={{
-					// maxWidth: '150px',
+					width: '100%',
+					height: '100vh',
 					display: 'grid',
-					justifyItems: 'center',
-					alignItems: 'center',
+					placeContent: 'center',
 				}}
-				alt='image'
-			/>
-		</div>
+			>
+				<img
+					src={BackgroundImage}
+					style={{
+						// maxWidth: '150px',
+						display: 'grid',
+						justifyItems: 'center',
+						alignItems: 'center',
+					}}
+					alt='image'
+				/>
+			</div> */}
+		</>
 	)
 }
 
