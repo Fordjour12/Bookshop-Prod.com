@@ -3,6 +3,7 @@ import 'boxicons'
 import Logo from '../../../assets/phantom Icon/phantom 2.png'
 import { NavigationData } from '../../data/navigationData'
 import { Link } from 'react-router-dom'
+import Login from '../interfaces/login'
 
 const navigation = () => {
 	// BoxIconsColor declaration
@@ -20,11 +21,11 @@ const navigation = () => {
 			<nav className='navigation'>
 				<ul className='navigation_lists'>
 					{NavigationData.map((Items, idx) => {
-						const { icon, text } = Items
+						const { icon, link, text } = Items
 						return (
 							<li key={idx} className='navigation_lists-items'>
 								<Link
-									to=''
+									to={link}
 									className='navigation_lists-items-link'
 								>
 									{icon}
@@ -36,8 +37,9 @@ const navigation = () => {
 						)
 					})}
 				</ul>
+
+				<Login classes='login__cta' />
 			</nav>
-			
 		</div>
 	)
 }

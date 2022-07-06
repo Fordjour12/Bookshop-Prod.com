@@ -3,7 +3,8 @@ import 'boxicons'
 // BoxIconsColor declaration
 const BoxIconColor = 'white'
 // BoxIconsAnimation declaration
-const BoxIconsAnimation = 'tada-hover'
+// const BoxIconsAnimation = 'tada-hover'
+const BoxIconsAnimation = ''
 const BoxIconsSize = ''
 
 export const NavigationData = [
@@ -18,7 +19,8 @@ export const NavigationData = [
 				size={BoxIconsSize}
 			></box-icon>
 		),
-		text: 'All',
+		link: '/',
+		text: 'Home',
 	},
 	{
 		icon: (
@@ -30,6 +32,7 @@ export const NavigationData = [
 				name='library'
 			></box-icon>
 		),
+		link: '/library',
 		text: 'Library',
 	},
 	{
@@ -43,6 +46,7 @@ export const NavigationData = [
 				name='category'
 			></box-icon>
 		),
+		link: '/categories',
 		text: 'Categories',
 	},
 	{
@@ -56,6 +60,7 @@ export const NavigationData = [
 				name='user'
 			></box-icon>
 		),
+		link: 'authors',
 		text: 'Authors',
 	},
 	{
@@ -69,6 +74,7 @@ export const NavigationData = [
 				name='star'
 			></box-icon>
 		),
+		link: 'recommended',
 		text: 'Recommended',
 	},
 ]
