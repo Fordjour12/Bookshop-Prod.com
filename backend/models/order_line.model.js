@@ -11,6 +11,10 @@ class OrderLine extends Model {
 		return tablesConfig.order_line
 	}
 
+	static get idColumn() {
+		return 'line_Id', 'order_Id', 'book_Id'
+	}
+
 	static relationMappings = {}
 
 	static get jsonSchema() {

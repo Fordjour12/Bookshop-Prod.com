@@ -11,6 +11,9 @@ class AddressStatus extends Model {
 	static get tableName() {
 		return tablesConfig.address
 	}
+	static get idColumn() {
+		return 'status_Id'
+	}
 
 	static relationMappings = {}
 

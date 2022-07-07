@@ -11,6 +11,10 @@ class OrderHistory extends Model {
 		return tablesConfig.order_history
 	}
 
+	static get idColumn() {
+		return 'history_Id', 'order_Id', 'status_Id'
+	}
+
 	static relationMappings = {}
 
 	static get jsonSchema() {

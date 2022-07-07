@@ -11,6 +11,10 @@ class CustomerOrder extends Model {
 		return tablesConfig.customer_order
 	}
 
+	static get idColumn() {
+		return 'order_Id', 'customer_Id', 'method_Id', 'address_Id'
+	}
+
 	static relationMappings = {}
 
 	static get jsonSchema() {

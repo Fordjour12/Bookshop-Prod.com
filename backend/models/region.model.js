@@ -11,6 +11,10 @@ class Region extends Model {
 		return tablesConfig.region
 	}
 
+	static get idColumn() {
+		return 'region_Id'
+	}
+
 	static relationMappings = {}
 
 	static get jsonSchema() {
@@ -19,7 +23,7 @@ class Region extends Model {
 			required: ['region_Id', 'region_name'],
 
 			properties: {
-				region_Id: { type: 'uuid' },
+				region_Id: { type: 'integer' },
 				region_name: {
 					type: 'string',
 					minLength: 1,

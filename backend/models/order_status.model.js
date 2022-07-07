@@ -11,6 +11,9 @@ class OrderStatus extends Model {
 		return tablesConfig.order_status
 	}
 
+	static get idColumn() {
+		return 'status_Id'
+	}
 	static relationMappings = {}
 
 	static get jsonSchema() {

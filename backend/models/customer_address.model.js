@@ -11,6 +11,10 @@ class CustomerAddress extends Model {
 		return tablesConfig.customer_address
 	}
 
+	static get idColumn() {
+		return 'customer_Id', 'status_Id', 'address_Id'
+	}
+
 	static relationMappings = {}
 
 	static get jsonSchema() {

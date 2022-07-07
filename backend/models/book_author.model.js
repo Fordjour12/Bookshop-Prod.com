@@ -10,6 +10,10 @@ class BookAuthor extends Model {
 	static get tableName() {
 		return tablesConfig.book_author
 	}
+	
+	static get idColumn() {
+		return 'author_Id', 'book_Id'
+	}
 
 	static relationMappings = {}
 

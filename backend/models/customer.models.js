@@ -1,6 +1,6 @@
 import { Model } from 'objection'
-import tablesConfig from '../config/tables.config'
-import connection from '../config/db.config'
+import tablesConfig from '../config/tables.config.js'
+import connection from '../config/db.config.js'
 
 // initializing the db config
 Model.knex(connection)
@@ -11,17 +11,21 @@ class Customer extends Model {
 		return tablesConfig.customer
 	}
 
-	static relationMappings = {}
+	// static relationMappings = {}
+
+	static get idColumn() {
+		return 'customer_Id'
+	}
 
 	static get jsonSchema() {
 		return {
 			type: 'object',
-			required: ['customer_Id', 'name', 'email'],
+			required: ['username', 'email', 'password'],
 
 			properties: {
-				customer_id: { type: 'uuid' },
-				name: { type: 'string', minLength: 1, maxLength: 250 },
+				username: { type: 'string', minLength: 1, maxLength: 255 },
 				email: { type: 'string', minLength: 1, maxLength: 255 },
+				password: { type: 'string', minLength: 6, maxLength: 255 },
 			},
 		}
 	}

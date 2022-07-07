@@ -6,10 +6,12 @@
 		"start": "node app.js",
 		"dev": "nodemon app.js",
 		"migrate": "npx knex migrate:latest --knexfile ./knexfile.js",
-		"rollback": "npx knex migrate:rollback --knexfile ./knexfile.js"
+		"rollback": "npx knex migrate:rollback --knexfile ./knexfile.js",
+		"seed": "npx knex seed:run --knexfile ./knexfile.js"
 	},
 	"type": "module",
 	"dependencies": {
+		"bcrypt": "^5.0.1",
 		"compression": "^1.7.4",
 		"cors": "^2.8.5",
 		"debug": "~2.6.9",
