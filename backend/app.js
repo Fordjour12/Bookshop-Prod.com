@@ -11,7 +11,7 @@ import CustomerRouter from './routes/customer.routes.js'
 
 const app = express()
 
-const Port = parseInt(process.env.PORT)
+const Port = process.env.PORT
 // const Host = "0.0.0.0"
 
 
