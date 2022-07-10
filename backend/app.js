@@ -7,7 +7,7 @@ import volleyball from 'volleyball'
 import createError from 'http-errors'
 
 // import indexRouter from './routes/index'
-import usersRouter from './routes/users.router.js'
+import CustomerRouter from './routes/customer.routes.js'
 
 const app = express()
 const Port = process.env.PORT
@@ -33,7 +33,7 @@ app.get('/', async (_request, response) => {
 })
 
 // Routes
-app.use('/api/users', usersRouter)
+app.use(CustomerRouter)
 // app.use('/api/', usersRouter)
 
 app.use(async (_request, _response, next) => {

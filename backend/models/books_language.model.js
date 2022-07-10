@@ -11,6 +11,10 @@ class BooksLanguage extends Model {
 		return tablesConfig.books_language
 	}
 
+	static get idColumn() {
+		return 'language_Id'
+	}
+
 	static relationMappings = {}
 
 	static get jsonSchema() {

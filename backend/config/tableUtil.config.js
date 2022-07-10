@@ -1,6 +1,10 @@
 export function createTableName(knex, tableName) {
 	return knex.schema.createTable(tableName, (table) => {
-		table.uuid(`${tableName}_Id`).notNullable().primary()
+		table
+			.uuid(`${tableName}_Id`)
+			.defaultTo(knex.raw('gen_random_uuid()'))
+			.notNullable()
+			.primary()
 		table.string(`${tableName}_name`).notNullable()
 	})
 }

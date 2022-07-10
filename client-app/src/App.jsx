@@ -1,32 +1,23 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Homepage from './components/pages/homepage'
+import Library from './components/pages/library'
+import LoginPage from './components/pages/loginpage'
+import Authors from './components/pages/authors'
+import Categories from './components/pages/categories'
+import Recommended from './components/pages/recommended'
 import './scss/stylesheet.scss'
-// import BackgroundImage from './assets/phantom Icon/phantom 2.png'
 
 const App = () => {
 	return (
-		<>
-			<Homepage />
-			{/* <div
-				style={{
-					width: '100%',
-					height: '100vh',
-					display: 'grid',
-					placeContent: 'center',
-				}}
-			>
-				<img
-					src={BackgroundImage}
-					style={{
-						// maxWidth: '150px',
-						display: 'grid',
-						justifyItems: 'center',
-						alignItems: 'center',
-					}}
-					alt='image'
-				/>
-			</div> */}
-		</>
+		<Routes>
+			<Route path='/' element={<Homepage />} />
+			<Route path='/library' element={<Library />} />
+			<Route path='/login' element={<LoginPage />} />
+			<Route path='/recommended' element={<Recommended />} />
+			<Route path='/categories' element={<Categories />} />
+			<Route path='/authors' element={<Authors />} />
+		</Routes>
 	)
 }
 

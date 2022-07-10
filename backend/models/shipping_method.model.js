@@ -11,6 +11,10 @@ class ShippingMethod extends Model {
 		return tablesConfig.shipping_method
 	}
 
+	static get idColumn() {
+		return 'method_Id'
+	}
+
 	static relationMappings = {}
 
 	static get jsonSchema() {

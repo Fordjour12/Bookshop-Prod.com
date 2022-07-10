@@ -1,10 +1,15 @@
 @use '../../utils/' as *;
 
+$bg-clr: rgba(
+	$color: chocolate,
+	$alpha: 1,
+);
+
 .sidebar {
 	display: fixed;
 	height: 100vh;
 	padding-left: rem(25);
-	background-color: rgba($color: chocolate, $alpha: 1);
+	background-color: $bg-clr;
 }
 
 .header {
@@ -46,4 +51,8 @@
 			font-weight: 500;
 		}
 	}
+}
+
+.login__cta {
+	margin-top: rem(180);
 }

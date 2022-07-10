@@ -1,6 +1,7 @@
 import { Model } from 'objection'
 import connection from '../config/db.config'
 import tablesConfig from '../config/tables.config'
+import BookLanguage from './books_language.model'
 
 // db initialization
 Model.knex(connection)
@@ -11,7 +12,24 @@ class Publisher extends Model {
 		return tablesConfig.publisher
 	}
 
-	static relationMappings = {}
+	static get idColumn() {
+		return 'publisher_Id'
+	}
+
+	static relationMappings = {
+		ps: {
+			relation: Model.ManyToManyRelation,
+			modelClass: BookLanguage,
+			join: {
+				from: 'publisher.publisher_Id',
+				through: {
+					from: 'book.language_Id',
+					to: 'book.publisher_Id',
+				},
+				to: 'book_language.language_Id',
+			},
+		},
+	}
 
 	static get jsonSchema() {
 		return {
@@ -19,7 +37,7 @@ class Publisher extends Model {
 			required: ['publisher_Id', 'publisher_name'],
 
 			properties: {
-				publisher_Id: { type: 'uuid' },
+				publisher_Id: { type: 'integer' },
 				publisher_name: {
 					type: 'string',
 					minLength: 1,

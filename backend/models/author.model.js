@@ -12,6 +12,10 @@ class Author extends Model {
 		return tablesConfig.author
 	}
 
+	static get idColumn() {
+		return 'author_Id'
+	}
+
 	static relationMappings = {}
 
 	static get jsonSchema() {

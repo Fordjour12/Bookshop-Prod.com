@@ -11,6 +11,9 @@ class Address extends Model {
 	static get tableName() {
 		return tablesConfig.address
 	}
+	static get idColumn() {
+		return 'address_Id', 'region_Id'
+	}
 
 	static relationMappings = {}
 
