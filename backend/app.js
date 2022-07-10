@@ -10,7 +10,7 @@ import createError from 'http-errors'
 import CustomerRouter from './routes/customer.routes.js'
 
 const app = express()
-const Port = parseInt(process.env.PORT) || 8080
+const Port = 8080
 const Host = '0.0.0.0'
 
 // middleware
@@ -49,5 +49,5 @@ app.use((error, _request, response) => {
 })
 
 app.listen(Port, () => {
-	console.log(`Server Running on http://${Host}:${Port}`)
+	console.log(`Server Running on http://${Host}:${Port} `)
 })
