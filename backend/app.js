@@ -12,7 +12,7 @@ import CustomerRouter from './routes/customer.routes.js'
 const app = express()
 
 const Port = parseInt(process.env.PORT)
-const Host = "0.0.0.0"
+// const Host = "0.0.0.0"
 
 
 // middleware
@@ -52,6 +52,7 @@ app.use((error, _request, response) => {
 
 app.listen(Port, () => {
 
-	console.log(`Server Running on http://${Host}:${Port} `)
+// 	console.log(`Server Running on http://${Host}:${Port} `)
+	console.log(`server up at ${Port}`)
 
 })
