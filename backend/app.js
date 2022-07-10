@@ -10,8 +10,8 @@ import createError from 'http-errors'
 import CustomerRouter from './routes/customer.routes.js'
 
 const app = express()
-const Port = process.env.PORT
-const Host = process.env.HOST
+const Port = parseInt(process.env.PORT) || 8080
+const Host = '0.0.0.0'
 
 // middleware
 app.use(cors())

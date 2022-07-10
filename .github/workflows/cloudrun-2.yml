@@ -9,7 +9,6 @@ env:
     SERVICE: bookshop-prod-bck # TODO: update Cloud Run service name
     REGION: us-central1 # TODO: update Cloud Run service region
     IMAGE_NAME: gcr.io/bookshop-prod-353018/bookshop-prod-bck
-    PORT: 8080
 
 jobs:
     deploy:
@@ -47,7 +46,6 @@ jobs:
                    --image "$IMAGE_NAME" \
                    --platform "managed" \
                    --allow-unauthenticated \
-                   --set-env-vars "HOST = 0.0.0.0"\
 
             # If required, use the Cloud Run url output in later steps
             - name: Show Output
