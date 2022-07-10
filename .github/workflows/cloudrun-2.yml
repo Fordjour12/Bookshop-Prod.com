@@ -46,6 +46,12 @@ jobs:
                    --image "$IMAGE_NAME" \
                    --platform "managed" \
                    --allow-unauthenticated \
+                   --set-env-vars "HOST = 0.0.0.0"\
+                   --set-env-vars "PORT = 8080"\
+                   --set-env-vars "ACCESS_TOKEN_SECRET =f8382e07c91e5fc4017023cac"\
+                   --set-env-vars "REFRESH_TOKEN_SECRET =09a44df717687976c9f027908"\
+                   --set-env-vars "ELEPHANTSQL_CONNECTION =postgres://mnlkqmlq:L3WUhNDvzk34tpfQHufJK9o5gB_CXk87@batyr.db.elephantsql.com/mnlkqmlq"\
+                   --set-env-vars "REDIS_CONNECTION =redis://:V0f0UD3omsISgIKJnebofS9YIV78QyfS@redis-19114.c267.us-east-1-4.ec2.cloud.redislabs.com:19114"\
 
             # If required, use the Cloud Run url output in later steps
             - name: Show Output
