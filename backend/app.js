@@ -11,7 +11,7 @@ import CustomerRouter from './routes/customer.routes.js'
 
 const app = express()
 const Port = parseInt(process.env.PORT) || 8080
-const Host = process.env.HOST
+const Host = '0.0.0.0'
 
 // middleware
 app.use(cors())
