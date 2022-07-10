@@ -1,5 +1,4 @@
 import React from 'react'
-import 'boxicons'
 import Logo from '../../../assets/phantom Icon/phantom 2.png'
 import { NavigationData } from '../../data/navigationData'
 import { Link } from 'react-router-dom'
