@@ -46,6 +46,8 @@ jobs:
                    --image "$IMAGE_NAME" \
                    --platform "managed" \
                    --allow-unauthenticated \
+                   --set-env-vars "PORT=8080"\
+                   --set-env-vars "HOST=0.0.0.0"\
 
             # If required, use the Cloud Run url output in later steps
             - name: Show Output
