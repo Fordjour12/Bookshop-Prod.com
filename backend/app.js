@@ -12,8 +12,6 @@ import CustomerRouter from './routes/customer.routes.js'
 const app = express()
 
 const Port = process.env.PORT
-const Host = process.env.HOST
-
 
 // middleware
 app.use(cors())
@@ -51,7 +49,5 @@ app.use((error, _request, response) => {
 })
 
 app.listen(Port, () => {
-
-	console.log(`Server Running on http://${Host}:${Port} `)
-
+	console.log(`Server Running on http://localhost:${Port} `)
 })
